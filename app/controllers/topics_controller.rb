@@ -1,8 +1,9 @@
 class TopicsController < ApplicationController
   def index
-  end
-
-  def new
+    # 投稿用
+    @topic = Topic.new
+    # 一覧表示用
+    @topics = Topic.all
   end
 
   def create
