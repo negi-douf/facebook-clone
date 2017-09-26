@@ -2,6 +2,18 @@
   <%= form_for(@topic) do |f| %>
     <h4>Topicを投稿</h4>
 
+    <!-- エラーがあった際はその内容を表示させる -->
+    <% if @errors %>
+      <div id="error_explanation">
+        <h2><%= @errors.count %>件のエラーがあります。</h2>
+        <ul>
+          <% @errors.each do |msg| %>
+            <li><%= msg %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
+
     <%= f.text_area :content, class: "form-control" %>
     <br />
     <%= f.submit "投稿",  class: "save_picture btn btn-primary" %>
