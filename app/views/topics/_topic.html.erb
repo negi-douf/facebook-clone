@@ -2,6 +2,8 @@
   <% @topics.each do |topic| %>
     <div class="topic">
       <p><%= topic.content %></p>
+
+      <%= show_picture(topic) %>
     </div>
     <br />
   <% end %>

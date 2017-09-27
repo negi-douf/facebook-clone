@@ -33,3 +33,7 @@ body {
   color: #dcdcdc;
   background-color: transparent;
 }
+
+img{
+  max-width: 100%;
+}
