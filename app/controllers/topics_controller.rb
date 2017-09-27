@@ -9,7 +9,7 @@ class TopicsController < ApplicationController
     # 投稿用
     @topic = Topic.new
     # 一覧表示用
-    @topics = Topic.all
+    @topics = Topic.all.sort.reverse
   end
 
   def create
