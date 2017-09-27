@@ -15,14 +15,16 @@
  */
 
 body {
-  background-color: #f5f5f5;
+  background-color: #ebebeb;
 }
 
 .navbar {
+  /* Facebook の青 */
   background-color: #305097;
 }
 
 .navbar .container-fluid .navbar-header > a {
+  /* navbar の文字は白 */
   color: white;
 }
 

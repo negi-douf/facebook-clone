@@ -1,5 +1,8 @@
-<div class="topic">
+<div class="topics">
   <% @topics.each do |topic| %>
-    <p><%= topic.content %></p>
+    <div class="topic">
+      <p><%= topic.content %></p>
+    </div>
+    <br />
   <% end %>
 </div>
