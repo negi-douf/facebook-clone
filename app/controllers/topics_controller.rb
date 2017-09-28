@@ -1,5 +1,6 @@
 class TopicsController < ApplicationController
   before_action :set_errors, only: [:index, :edit]
+  before_action :set_topic, only: [:show, :edit, :update, :destroy]
 
   # エラー出力用のグローバル変数
   # エラーメッセージを格納する
@@ -48,5 +49,10 @@ class TopicsController < ApplicationController
       @errors = $errors
       $errors = []
     end
+  end
+
+  # id からブログを特定するメソッド
+  def set_topic
+    @topic = Topic.find(params[:id])
   end
 end
