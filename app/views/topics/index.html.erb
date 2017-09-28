@@ -11,9 +11,8 @@
     <div class="topics">
       <% @topics.each do |topic| %>
         <%= render :partial => "topic", :locals => { topic: topic } %>
+        <br />
       <% end %>
     </div>
-    <br />
-
   </div>
 </div>
