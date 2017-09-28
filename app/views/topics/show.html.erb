@@ -2,13 +2,15 @@
   <div class="row">
     <div class="col col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
       <div class="topic">
-        <p><%= @topic.content %></p>
-        <%= show_picture(@topic) %>
+        <%= link_to topic_path(@topic) do %>
+          <p><%= @topic.content %></p>
+          <%= show_picture(@topic) %>
 
-        <div class="topics_buttons">
-          <%= link_to "編集", edit_topic_path(@topic), class: "btn btn-success btn-sm" %>
-          <%= link_to "削除", topic_path(@topic.id), method: :delete, data: { confirm: "本当に削除しますか？"}, class: "btn btn-danger btn-sm" %>
-        </div>
+          <div class="topics_buttons">
+            <%= link_to "編集", edit_topic_path(@topic), class: "btn btn-success btn-sm" %>
+            <%= link_to "削除", topic_path(@topic.id), method: :delete, data: { confirm: "本当に削除しますか？"}, class: "btn btn-danger btn-sm" %>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
