@@ -11,6 +11,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem "twitter-bootstrap-rails"
 gem 'carrierwave'
 gem 'mini_magick'
+gem "devise"
 
 group :development, :test do
   gem 'byebug'
