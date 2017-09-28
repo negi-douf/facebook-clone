@@ -19,7 +19,7 @@ class TopicsController < ApplicationController
       flash[:success] = "Topicを投稿しました！"
       redirect_to root_path
     else
-      flash[:danger] = "ツイートの投稿に失敗しました"
+      flash[:danger] = "Topicの投稿に失敗しました"
       $errors = @tweet.errors
       redirect_to root_path
     end
@@ -32,9 +32,23 @@ class TopicsController < ApplicationController
   end
 
   def update
+    if @topic.update(topics_params)
+      flash[:success] = "Topicを編集しました！"
+    else
+      flash[:danger] = "Topicの投稿に失敗しました"
+      $errors = @tweet.errors
+    end
+    redirect_to root_path
   end
 
   def destroy
+    if @topic.destroy
+      flash[:success] = "Topicを削除しました！"
+    else
+      flash[:danger] = "Topicの削除に失敗しました"
+      $errors = @tweet.errors
+    end
+    redirect_to root_path
   end
 
   private
