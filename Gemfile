@@ -14,6 +14,13 @@ gem 'mini_magick'
 gem "devise"
 gem "rails_admin"
 gem "cancan"
+gem 'omniauth'
+gem 'omniauth-twitter'
+gem 'omniauth-facebook'
+
+group :development do
+  gem "dotenv-rails"
+end
 
 group :development, :test do
   gem 'byebug'

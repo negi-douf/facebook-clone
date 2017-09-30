@@ -1,7 +1,13 @@
 Rails.application.routes.draw do
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  devise_for :users
+
+  devise_for :users, controllers: {
+    # controller の指定
+    registrations: "users/registrations",
+    omniauth_callbacks: "users/omniauth_callbacks"
+  }
+
   resources :topics
 
   root "topics#index", only: [ :index, :create, :show, :edit, :update, :destroy ]
