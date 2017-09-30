@@ -16,6 +16,7 @@ class TopicsController < ApplicationController
 
   def create
     @topic = Topic.new(topics_params)
+    @topic.user_id = current_user.id
     if @topic.save
       flash[:success] = "Topicを投稿しました！"
       redirect_to root_path
