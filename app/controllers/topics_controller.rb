@@ -1,6 +1,7 @@
 class TopicsController < ApplicationController
   before_action :set_errors, only: [:index, :edit]
   before_action :set_topic, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!
 
   # エラー出力用のグローバル変数
   # エラーメッセージを格納する
