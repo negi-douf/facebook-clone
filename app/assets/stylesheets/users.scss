@@ -1,28 +1,18 @@
-// Place all the styles related to the topics controller here.
+// Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.topic {
+.user {
   background-color: white;
   -webkit-border-radius: 5px;    /* Safari,Google Chrome用 */
   -moz-border-radius: 5px;
 }
 
-.topics_buttons {
-  /* text-align: right; */
-  padding-left: 10px;
-  padding-bottom: 10px;
-}
-
-img {
-  padding: 10px;
-}
-
-.topic > img {
+.user > img {
   width: 70px;
   height: 70px;
 }
 
-.topic > a > p {
-  padding-left: 20px;
+.user >  input {
+  padding-left: 15px;
 }

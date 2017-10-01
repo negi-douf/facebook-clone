@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  get 'relationships/create'
+
+  get 'relationships/destroy'
+
+  get 'users/index'
+
+  get 'users/show'
+
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   devise_for :users, controllers: {
@@ -9,8 +17,10 @@ Rails.application.routes.draw do
   }
 
   resources :topics
+  resources :users, only: [:index, :show]
+  resources :relationships, only: [:create, :destroy]
 
-  root "topics#index", only: [ :index, :create, :show, :edit, :update, :destroy ]
+  root "topics#index", only: [:index, :create, :show, :edit, :update, :destroy ]
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
