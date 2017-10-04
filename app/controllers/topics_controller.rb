@@ -22,7 +22,7 @@ class TopicsController < ApplicationController
       redirect_to root_path
     else
       flash[:danger] = "Topicの投稿に失敗しました"
-      $errors = @tweet.errors
+      $errors = @topic.errors
       redirect_to root_path
     end
   end
@@ -39,8 +39,8 @@ class TopicsController < ApplicationController
     if @topic.update(topics_params)
       flash[:success] = "Topicを編集しました！"
     else
-      flash[:danger] = "Topicの投稿に失敗しました"
-      $errors = @tweet.errors
+      flash[:danger] = "Topicの編集に失敗しました"
+      $errors = @topic.errors
     end
     redirect_to root_path
   end
@@ -50,7 +50,7 @@ class TopicsController < ApplicationController
       flash[:success] = "Topicを削除しました！"
     else
       flash[:danger] = "Topicの削除に失敗しました"
-      $errors = @tweet.errors
+      $errors = @topic.errors
     end
     redirect_to root_path
   end

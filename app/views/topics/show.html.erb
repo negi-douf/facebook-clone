@@ -6,19 +6,18 @@
         <%= show_picture(@topic) %>
         <p class="right">
           <%= @topic.created_at.strftime("%y/%m/%d %p %l:%M") %>
-          <% if current_user.id == @topic.user.id %>
-            <div class="topics_buttons">
-              <%= link_to "編集", edit_topic_path(@topic.id), class: "btn btn-success btn-sm" %>
-              <%= link_to "削除", topic_path(@topic.id), method: :delete, data: { confirm: "本当に削除しますか？"}, class: "btn btn-danger btn-sm" %>
-            </div>
-          <% end %>
         </p>
+
+        <% if current_user.id == @topic.user.id %>
+          <div class="topics_buttons">
+            <%= link_to "編集", edit_topic_path(@topic.id), class: "btn btn-success btn-sm" %>
+            <%= link_to "削除", topic_path(@topic.id), method: :delete, data: { confirm: "本当に削除しますか？"}, class: "btn btn-danger btn-sm" %>
+          </div>
+        <% end %>
       </div>
       <br />
 
       <div class="comments">
-        <%= render "layouts/flash" %>
-
         <div class="child row">
           <div class="topic-text">
             <h4>コメント</h4>
@@ -29,6 +28,7 @@
             <br />
             <%= link_to '戻る', root_path %>
           </div>
+        </div>
       </div>
     </div>
   </div>

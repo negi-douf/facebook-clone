@@ -1,2 +1,6 @@
-<h1>Comments#edit</h1>
-<p>Find me in app/views/comments/edit.html.erb</p>
+<div class="container">
+  <div class="col col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+    <h1>コメント編集</h1>
+    <%= render partial: "form", locals: { comment: @comment, topic: @topic } %>
+  </div>
+</div>

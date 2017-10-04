@@ -1,5 +1,7 @@
 class CommentsController < ApplicationController
-  before_action :set_comment, only: [:edit, :update, :destroy]
+  before_action :set_instances, only: [:edit, :update, :destroy]
+
+  $errors = []
 
   def create
     @comment = current_user.comments.build(comments_params)
@@ -8,7 +10,6 @@ class CommentsController < ApplicationController
     # 要求に応じてレスポンス変更
     respond_to do |format|
       if @comment.save
-        flash[:success] = "コメントを投稿しました！"
         format.html { redirect_to topic_path(@topic) }
         format.js { render :index }
       else
@@ -21,11 +22,13 @@ class CommentsController < ApplicationController
   end
 
   def update
+    unless @comment.update(comments_params)
+      $errors = @comment.errors
+    end
+    redirect_to topic_path(@topic)
   end
 
   def destroy
-    @topic = @comment.topic
-
     respond_to do |format|
       if @comment.destroy
         format.html { redirect_to topic_path(@topic) }
@@ -42,7 +45,15 @@ class CommentsController < ApplicationController
     params.require(:comment).permit(:topic_id, :content)
   end
 
-  def set_comment
+  def set_instances
     @comment = Comment.find(params[:id])
+    @topic = @comment.topic
+  end
+
+  def set_errors
+    unless $errors.empty?
+      @errors = $errors
+      $errors = []
+    end
   end
 end
