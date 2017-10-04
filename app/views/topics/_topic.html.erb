@@ -1,6 +1,8 @@
 <div class="topic">
-  <%= profile_img(topic.user) %>
-  <%= link_to "#{topic.user.name}", user_path(topic.user.id) %>
+  <div class="avatar">
+    <%= profile_img(topic.user) %>
+    <%= link_to "#{topic.user.name}", user_path(topic.user.id) %>
+  </div>
   <%= link_to topic_path(topic) do %>
     <p><%= topic.content %></p>
     <%= show_picture(topic) %>
