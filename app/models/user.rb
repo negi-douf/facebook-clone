@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable, :omniauthable
 
   mount_uploader :avatar, AvatarUploader
-  
+
   has_many :topics
   has_many :relationships, foreign_key: "follower_id", dependent: :destroy
   has_many :reverse_relationships, foreign_key: "followed_id", class_name: "Relationship", dependent: :destroy
@@ -43,7 +43,7 @@ class User < ActiveRecord::Base
           email:    "#{auth.uid}-#{auth.provider}@example.com",
           password: Devise.friendly_token[0, 20]
       )
-      user.skip_confirmation!
+      # user.skip_confirmation!
       user.save
     end
     user
