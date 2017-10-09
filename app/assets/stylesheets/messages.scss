@@ -1,3 +1,19 @@
 // Place all the styles related to the Messages controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.talk {
+  background-color: white;
+  -webkit-border-radius: 5px;    /* Safari,Google Chrome用 */
+  -moz-border-radius: 5px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+img {
+  margin: 10px;
+}
+
+p {
+  margin-left: 75px;
+}

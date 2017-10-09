@@ -9,7 +9,7 @@ module ApplicationHelper
   end
 
   def profile_img(user)
-    return image_tag(user.avatar, alt: user.name) unless user.avatar.blank?
+    # return image_tag(user.avatar, alt: user.name) unless user.avatar.blank?
     return image_tag(user.image_url, alt: user.name) if user.image_url != nil
     if ! user.image_url.blank?
       img_url = user.image_url
