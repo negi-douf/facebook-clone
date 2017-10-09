@@ -6,14 +6,11 @@
   background-color: white;
   -webkit-border-radius: 5px;    /* Safari,Google Chrome用 */
   -moz-border-radius: 5px;
+  padding: 10px;
 }
 
 .user > img {
   width: 50px;
   height: 50px;
-  margin: 10px;
-}
-
-.user >  input {
-  margin-left: 15px;
+  margin-bottom: 10px;
 }
