@@ -17,6 +17,7 @@ gem "cancan"
 gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
+gem "faker"
 
 group :development do
   gem "dotenv-rails"
