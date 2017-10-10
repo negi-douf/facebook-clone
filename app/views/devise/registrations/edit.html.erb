@@ -53,14 +53,14 @@
       <% end %>
 
       <div class="actions">
-        <%= f.submit "Update", class: "btn btn-primary" %>
+        <%= f.submit "更新", class: "btn btn-primary" %>
       </div>
     <% end %>
     <br />
 
     <h3>アカウントの削除</h3>
 
-    <p><%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %></p>
+    <p><%= button_to "アカウント削除", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "btn btn-danger" %></p>
     <br />
 
     <%= link_to "戻る", :back %>
