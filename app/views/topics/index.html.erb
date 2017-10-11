@@ -10,7 +10,7 @@
 
     <div class="topics">
       <% @topics.each do |topic| %>
-        <% if current_user.following?(topic.user) %>
+        <% if current_user == topic.user || current_user.following?(topic.user) %>
           <%= render :partial => "topic", :locals => { topic: topic } %>
           <br />
         <% end %>
