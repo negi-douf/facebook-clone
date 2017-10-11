@@ -18,6 +18,7 @@ gem 'omniauth'
 gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem "faker"
+gem 'fog'
 
 group :development do
   gem "dotenv-rails"
