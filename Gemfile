@@ -19,10 +19,9 @@ gem 'omniauth-twitter'
 gem 'omniauth-facebook'
 gem "faker"
 gem 'fog'
-
-group :development do
-  gem "dotenv-rails"
-end
+gem 'dotenv-rails'
+gem 'unicorn'
+gem 'therubyracer', platforms: :ruby
 
 group :development, :test do
   gem 'byebug'
@@ -30,4 +29,9 @@ group :development, :test do
   gem 'spring'
   gem 'pry-rails'
   gem "better_errors"
+  gem 'capistrano', '3.6.0'
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-rbenv'
+  gem 'capistrano3-unicorn'
 end
