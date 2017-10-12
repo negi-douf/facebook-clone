@@ -23,6 +23,10 @@ gem 'dotenv-rails'
 gem 'unicorn'
 gem 'therubyracer', platforms: :ruby
 
+group :development do
+  gem "letter_opener_web"
+end
+
 group :development, :test do
   gem 'byebug'
   gem 'web-console', '~> 2.0'
