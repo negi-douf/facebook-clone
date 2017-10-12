@@ -22,9 +22,9 @@ Rails.application.routes.draw do
     resources :messages
   end
 
-  if Rails.env.development?
-    mount LetterOpenerWeb::Engine, at: "/letter_opener"
-  end
+  # if Rails.env.development?
+  #   mount LetterOpenerWeb::Engine, at: "/letter_opener"
+  # end
 
   root "topics#index", only: [:index, :create, :show, :edit, :update, :destroy ]
 
