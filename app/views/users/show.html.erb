@@ -1,2 +1,16 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<div class="container">
+  <div class="col col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1">
+    <div class="user_description">
+      <%= profile_img(@user) %>
+      <h1><%= @user.name %></h1>
+    </div>
+    <br />
+
+    <h4>投稿したTopic一覧</h4>
+    <div class="users_topic">
+      <% @topics.each do |topic| %>
+        <%= render :partial => "topics/topic", :locals => { topic: topic }  %>
+      <% end %>
+    </div>
+  </div>
+</div>
