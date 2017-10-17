@@ -64,8 +64,8 @@ class TopicsController < ApplicationController
   end
 
   def set_errors
-    if @review.invalid?
-      $errors = @review.errors.full_messages
+    if @topic.invalid?
+      $errors = @topic.errors.full_messages
     end
   end
 
