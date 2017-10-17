@@ -6,7 +6,7 @@
         <% if conversation.target_user(current_user).present? %>
           <%= profile_img(conversation.target_user(current_user)) %>
           <%= link_to conversation.target_user(current_user).name, conversation_messages_path(conversation)%>
-          <p><%= conversation.messages.last.body %></p>
+          <p><%= conversation.messages.last.body if conversation.messages.present? %></p>
         <% end %>
       </div>
     <% end %>

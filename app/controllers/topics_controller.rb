@@ -1,5 +1,4 @@
 class TopicsController < ApplicationController
-  before_action :set_errors, only: [:index, :edit]
   before_action :set_topic, only: [:show, :edit, :update, :destroy]
   before_action :authenticate_user!
 
@@ -12,6 +11,7 @@ class TopicsController < ApplicationController
     @topic = Topic.new
     # 一覧表示用
     @topics = Topic.all.sort.reverse
+    get_errors
   end
 
   def create
@@ -22,7 +22,7 @@ class TopicsController < ApplicationController
       redirect_to root_path
     else
       flash[:danger] = "Topicの投稿に失敗しました"
-      $errors = @topic.errors
+      set_errors
       redirect_to root_path
     end
   end
@@ -33,6 +33,7 @@ class TopicsController < ApplicationController
   end
 
   def edit
+    get_errors
   end
 
   def update
@@ -40,7 +41,7 @@ class TopicsController < ApplicationController
       flash[:success] = "Topicを編集しました！"
     else
       flash[:danger] = "Topicの編集に失敗しました"
-      $errors = @topic.errors
+      set_errors
     end
     redirect_to root_path
   end
@@ -50,7 +51,7 @@ class TopicsController < ApplicationController
       flash[:success] = "Topicを削除しました！"
     else
       flash[:danger] = "Topicの削除に失敗しました"
-      $errors = @topic.errors
+      set_errors
     end
     redirect_to root_path
   end
@@ -63,10 +64,14 @@ class TopicsController < ApplicationController
   end
 
   def set_errors
-    unless $errors.empty?
-      @errors = $errors
-      $errors = []
+    if @review.invalid?
+      $errors = @review.errors.full_messages
     end
+  end
+
+  def get_errors
+    @errors = $errors
+    $errors = []
   end
 
   # id からブログを特定するメソッド
